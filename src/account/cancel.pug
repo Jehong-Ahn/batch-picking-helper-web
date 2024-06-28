@@ -1,0 +1,14 @@
+extends /layout.pug
+
+block content
+  .container.my-4: .row: .col
+    
+    p.fs-2.text-success Cancel Subscription
+    
+    p Please send an email with the subject 
+      +code("Cancel Subscription")
+      |  to 
+      a(href="mailto:batchpickinghelper@rfv.kr?subject=Cancel%20Subscription&body=Please%20send%20this%20email%20to%20confirm%20the%20cancellation." target="_blank") batchpickinghelper@rfv.kr
+      | .
+      
+    p Your subscription will be canceled within 1 hour.

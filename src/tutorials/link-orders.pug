@@ -1,0 +1,142 @@
+extends /tutorials.pug
+
+block content
+
+  +tutorialHeader(3, "Link Orders To Inventories")
+
+  .container.py-4: .row
+    .col-12
+      p.fs-4.text-success 1. Link Inventories
+      p Now it's time to determine which inventory items to fulfill for each order. 
+      p Click the 
+        +button("Link Orders to Inventories") 
+        |  button in the sidebar. 
+      p You can see the connection information in the newly added 
+        +col("Linked Inventory")
+        |  column. 
+      p 8 orders have been automatically linked to inventory, and 1 order is marked as "Unmapped."
+
+    .col
+      +img('link1.png')
+        
+  .container.py-4: .row
+    .col
+      p.fs-4.text-success 2. Linking Methods
+      p Leave the unmapped order for now. 
+      p First, let's take a look at how inventory linking works.
+      
+  .bg-secondary-subtle: .container.py-4: .row
+    .col-5
+      p.fs-5 Automatic Linking
+      p Orders in rows 2 and 3 were found and linked from the 
+        +sheet("Inventories")
+        | . 
+      p If the product name and option name in the 
+        +sheet("Inventories") 
+        | match, they are simply linked.
+    .col
+      +img('link2.png')
+      +img('link3.png')
+        
+  .bg-secondary-subtle: .container.py-4: .row
+    .col-5
+      p.fs-5 Custom Linking
+      p Orders in rows 4, 5, and 6 are promotional items. The product names include the phrase 
+        code.text-nowrap Special Offer
+        | . This won't match the product names in the 
+        +sheet("Inventories")
+        | . 
+      p In such cases, you can set up the necessary mappings in the 
+        +sheet("Prd Invt Map")
+        | .  
+      p Enter the promotional product name under 
+        +col("Listed Product Name")
+        |  and the corresponding inventory product name under 
+        +col("Inventory Name")
+        | . 
+      p Using the wildcard 
+        code * 
+        | allows for convenient option name processing.
+    .col
+      +img('link4.png')
+      +img('link5.png')
+      
+  .bg-secondary-subtle: .container.py-4: .row
+    .col-5
+      p.fs-5 Bundle Linking
+      p Sometimes, a single product listed on the store needs to be linked to multiple inventory items. This is called 
+        +code("Bundle Mapping")
+        | .
+      p Order in row 7 is a basketball shoes and basketball set. If the set is packaged and treated as a single inventory item, the standard method described above will suffice. However, if you need to pick and fulfill the basketball shoes and basketball separately, you need 
+        +code("Bundle Mapping")
+        | .
+      p You can enter the same 
+        +col("Listed Product Name") 
+        | twice in the 
+        +sheet("Prd Invt Map") 
+        | sheet to perform 
+        +code("Bundle Mapping")
+        | .
+      p You can also manage the quantity for each inventory item. Be sure to enter the quantities.
+    .col
+      +img('link6.png')
+      +img('link7.png')
+
+  
+  .container.py-4
+    .row
+      .col
+        p.fs-4.text-success 3. Resolve Unmapped Orders
+        p Now let's resolve the unmapped order marked in red in the 
+          +sheet("Orders")
+          | . 
+        p 
+          code Unmapped
+          |  means the ordered product name and option name are not found in the 
+          +sheet("Inventories")
+          |  or the 
+          +sheet("Prd Invt Map")
+          | .
+    .row
+      .col-5
+        p The product name of the order is a promotional item, similar to the example in 
+          +code("Custom Mapping")
+          | .
+      .col
+        +img('link8.png')
+
+    .row
+      .col-5
+        p At the bottom of the 
+          +sheet("Prd Invt Map")
+          |  sheet, you'll see the unmapped product names and option names automatically populated. This happens when you click the 
+          +button("Link Orders to Inventories") 
+          |  button.
+      .col
+        +img('link9.png')
+
+
+    .row
+      .col-5
+        p Simply link it to the 
+          +code("Baseball Shoes")
+          |  inventory as shown in the screenshot on the right.
+      .col
+        +img('link10.png')
+
+
+    .row
+      .col-5
+        p Now, click the 
+          +button("Link Orders to Inventories") 
+          |  button in the sidebar again, and all orders will be linked to inventory. Success!
+      .col
+        +img('link11.png')
+
+
+
+
+  spacer
+      
+  +next("/tutorials/packing-slips/")
+

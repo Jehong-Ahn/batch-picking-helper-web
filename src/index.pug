@@ -1,0 +1,56 @@
+extends /layout.pug
+
+block content
+
+  .container.mt-4.mb-4: .row
+    .col-9
+      img.img-fluid(src="https://cdn.glitch.global/24b02c4e-b7ca-409e-be06-606ca0b8c67e/hero.jpg?v=1719305232846")
+    
+    .col-3.d-flex.flex-column.justify-content-center
+      p.fs-5
+        span Increase efficiency by
+        span.text-success.fw-bold.mx-1 Batch Picking
+        span items within inventory zones.
+      p.fs-5
+        span No need for complex solutions. Easily manage with our
+        span.text-success.fw-bold.mx-1 Excel Add-on 💫
+        span .
+
+
+  .bg-success-subtle: .container.py-4: .row
+    .col
+      p.fs-4.text-success Inventory Mapping
+      p Automatically link Listed Products to Inventories to streamline the picking process for necessary stock.
+    .col
+      ul
+        li Automatically map Listed Product Names and Option Values to inventory
+        li Support for manual mapping
+        li No need for inventory numbers
+        li Wildcard mapping for all options within a single product
+        li Bundle product mapping: Link a single Listed Product to multiple inventory items, with separate quantity management for each
+        
+  .container.py-4: .row
+    .col
+      p.fs-4.text-success Picking Lists for Parallel Processing
+      p Consolidate orders by inventory zones to streamline batch picking.
+      ul
+        li Picking lists organized by inventory zones
+        li Total quantities and package numbers by location
+    .col
+      img.img-fluid.rounded(src="https://cdn.glitch.global/24b02c4e-b7ca-409e-be06-606ca0b8c67e/workers.jpg?v=1719310612910")
+      
+  .bg-secondary-subtle: .container.py-4: .row
+    .col
+      p.fs-4.text-success Package Slips
+      p Assign numbers to shipping boxes and print package slips.
+    .col
+      ul
+        li Package slips for each shipping box
+        li Generate shortened package numbers
+        li Handle combined shipping orders
+        li Customize with templates
+  
+  .bg-success: .container.py-5: .row: .col.text-center
+    p.fs-2.text-light Discover Our Simple Tutorial
+    p.fs-4.text-light 🚀 Let's Get Started!
+    a.btn.btn-light(href="/tutorials/install/") Start Tutorial
