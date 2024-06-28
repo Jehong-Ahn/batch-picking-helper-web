@@ -30,7 +30,7 @@ glitch project 오픈 시, `npm run start`가 실행되어 `eleventy --serve`가
 
 ## 빌드 경로 변경
 
-github pages 연동하려면 docs 에 빌드해야 한다. 
+github pages 연동하려면 docs 에 빌드해야 한다. (action 사용하면 상관없기는 하다.)
 
 `.eleventy.js`에서 output 변경하고
 

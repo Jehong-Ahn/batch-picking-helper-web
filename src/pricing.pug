@@ -1,0 +1,36 @@
+extends /layout.pug
+
+block content
+
+  .container.py-4: .row: .col
+    p.fs-2.text-success Pricing
+    
+  .container.py-4: .row
+    .col.border.rounded-start.p-3
+      p.fs-4 Basic Plan
+      p.fs-5 $ 9 / month
+      ul
+        li Automatic mapping between Listed Products and Inventories
+        li Print Picking Lists by inventory zones
+        li Print Package Slips for each shipping box
+        li Secure Add-on officially registered with Microsoft
+    .col.bg-success.text-light.p-4.d-flex.rounded-end
+      .m-auto.text-center
+        p: button#checkout.btn.btn-light.px-5 Checkout
+        p Start your free trial today!
+        p Cancel anytime, no questions asked.
+        
+  spacer
+  
+  script(src="https://cdn.paddle.com/paddle/v2/paddle.js")
+  script.
+    Paddle.Environment.set("sandbox");
+    Paddle.Initialize({ 
+      token: "test_460ab153f747e0c4a95f0043f69"
+    });
+    
+    window.checkout.onclick = () => {
+      Paddle.Checkout.open({ items: [
+        { priceId: "pri_01j1excefhraz98y5m186ny686", quantity: 1 } 
+      ] });
+    };
