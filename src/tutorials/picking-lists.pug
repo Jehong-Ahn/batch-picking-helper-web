@@ -1,0 +1,35 @@
+extends /tutorials.pug
+
+block content
+
+  +tutorialHeader(5, "Generate Picking Lists")
+
+  .container.py-4: .row
+    .col
+      p.fs-4.text-success 1. Generate Picking Lists
+      p Now you can consolidate orders by inventory zones for picking. Click the 
+        +button("Generate Picking Lists") 
+        |  button in the sidebar.
+      p The picking lists by zone have been created in the 
+        +sheet("Picking Lists")
+        | . The pages are already separated, so you can print them immediately.
+    .col
+      +img('pick1.png?v=1719557093951')
+        
+  .container.py-4: .row
+    .col
+      p.fs-4.text-success 2. How to work
+      p Let's take a look: You need to pick 2 baseballs from location A3. After picking, place 1 baseball in Box 1 and 1 baseball in Box 3.
+      p There's no need to check order numbers or tracking numbers on the boxes; you can easily find them using the box numbers.
+    .col
+      +img('pick2.png')
+
+
+      
+  spacer
+      
+  .bg-success: .container.py-5: .row: .col.text-center.text-light
+    p.fs-5 You're Done!
+    p You have completed the tutorial. 
+    p If you have any questions or suggestions, please feel free to contact us, and we will respond promptly!
+

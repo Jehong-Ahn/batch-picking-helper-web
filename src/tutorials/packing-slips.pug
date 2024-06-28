@@ -1,0 +1,65 @@
+extends /tutorials.pug
+
+block content
+
+  +tutorialHeader(4, "Generate Packing Slips")
+
+  .container.py-4: .row
+    .col
+      p.fs-4.text-success 1. Generate Box Numbers
+      p We will now generate packing slips, each of which will be assigned a package number. Why do we need package numbers?
+      p When batch picking, it's necessary to distribute the items into separate boxes afterward. It's challenging to differentiate boxes using order numbers or tracking numbers.
+      p Instead, short and clear numbers like 1, 2, etc., are more convenient for this task.
+      p Click the 
+        +button("Generate Packing Slips")
+        |  button in the sidebar to create box numbers in the 
+        +sheet("Orders")
+        |  sheet.
+    .col
+      +img('slip1.png')
+        
+  .container.py-4: .row
+    .col-5
+      p.fs-4.text-success 2. Generate Packing Slips
+      p Simultaneously with the generation of package numbers, all packing slips for each box will be created in the 
+        +sheet("Packing Slips")
+        | .
+      p Since the pages are already divided, you can print them directly.
+    .col
+      +img('slip2.png')
+      
+  .container.py-4
+    .row
+      .col
+        p.fs-4.text-success 3. Packing Slip Template
+        p You can modify the packing slip format in the 
+          +sheet("Packing Slip Template")
+          | .
+    .row
+      .col
+        p For example, let's make the following changes:
+        p Change the box tag from "HappyChannel" to "Online" 
+        p and add your logo image. (Make sure to "Place logo image in Cell" and not "Place over cells.")
+      .col
+        +img('slip3.png')
+    
+    .row
+      .col-5
+        p Here is what the modified template looks like.
+      .col
+        +img('slip4.png')
+    
+    .row
+      .col-5
+        p After making these changes, generate the packing slips again, and you'll see them displayed in the 
+          +sheet("Packing Slips")
+          |  as shown on the right.
+      .col
+        +img('slip5.png')
+
+
+      
+  spacer
+      
+  +next("/tutorials/picking-lists/")
+
