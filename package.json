@@ -21,7 +21,8 @@
     "url": "https://glitch.com/edit/#!/glitch-hello-eleventy"
   },
   "glitch": {
-    "projectType": "generated_static"
+    "projectType": "generated_static",
+    "buildDirectory": "docs"
   },
   "license": "MIT",
   "keywords": [

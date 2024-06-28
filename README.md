@@ -28,6 +28,15 @@ glitch project 오픈 시, `npm run start`가 실행되어 `eleventy --serve`가
 에디터 사용 중에 빌드된 파일들은 dev mode이다. prod mode으로 빌드하려면 `npm run build`한다.
 
 
+## 빌드 경로 변경
+
+github pages 연동하려면 docs 에 빌드해야 한다. 
+
+`.eleventy.js`에서 output 변경하고
+
+`package.json`에 buildPath 설정한다.
+
+
 ## Pug 사용법
 
 `extends`에 _includes/에 대해 참고 가능
