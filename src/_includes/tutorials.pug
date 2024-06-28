@@ -1,0 +1,40 @@
+extends /layout.pug
+
+mixin navItem(href, text, isActive)
+  li.nav-item: a.nav-link(href=href class=(isActive ? 'active' : 'link-secondary'))= text
+
+mixin tutorialTabs(activeIndex)
+  ul.nav.nav-tabs.mb-4
+    +navItem('/tutorials/install/', '1. Install', activeIndex === 1)
+    +navItem('/tutorials/get-orders/', '2. Get Orders', activeIndex === 2)
+    +navItem('/tutorials/link-orders/', '3. Link to Inventory', activeIndex === 3)
+    +navItem('/tutorials/packing-slips/', '4. Packing Slips', activeIndex === 4)
+    +navItem('/tutorials/picking-lists/', '5. Picking Lists', activeIndex === 5)
+
+mixin tutorialHeader(activeIndex, title)
+  .container.my-4: .row: .col
+    +tutorialTabs(activeIndex)
+    p
+      img.me-4(src="https://cdn.glitch.global/24b02c4e-b7ca-409e-be06-606ca0b8c67e/logistic-woman.png?v=1719454520160" style="width: 6em;")
+      span.fs-2.text-success= title
+
+
+
+mixin button(name)
+  button.btn.btn-secondary.btn-sm(disabled style="padding: .1em .5em;") #{name}
+
+mixin sheet(name)
+  span(style="border: 1px solid transparent; border-top-color: gray;") &nbsp;&nbsp;
+  span.text-nowrap(style="border: 1px solid gray; padding: 0 .4em; border-top-color: transparent; border-bottom-left-radius: 1em 1.5em; border-bottom-right-radius: 1em 1.5em;")= name
+  span(style="border: 1px solid transparent; border-top-color: gray;") &nbsp;&nbsp;
+  
+mixin col(name)
+  span.text-nowrap(style="border: 1px solid gray; padding: 0 .4em;")= name
+
+
+
+
+  
+mixin next(path)
+  .bg-success: .container.py-5: .row: .col.text-center
+    a.btn.btn-light.text-success(href=path) 👉 Continue to Next Step

@@ -1,0 +1,32 @@
+extends /tutorials.pug
+
+block content
+
+  +tutorialHeader(1, "Install the Add-on")
+
+  .container.py-4: .row
+    .col
+      p.fs-4.text-success 1. Install the Add-on
+      p Open a blank document in Excel. 
+      p Search for
+        code.text-nowrap.mx-2 Batch Picking Helper
+        | in the Office Store and install it. 
+      p Click the
+        code.mx-2 Start
+        | button in the Home tab to display the sidebar (task pane).
+    .col
+      +img('install1.png')
+        
+  .container.py-4: .row
+    .col-12
+      p.fs-4.text-success 2. Load Demo Data
+      p Click the 
+        +button("Load Demo Data") 
+        |  button in the sidebar to automatically generate sheets and data.
+    .col-12
+      +img('install2.png')
+      
+  spacer
+      
+  +next("/tutorials/get-orders/")
+

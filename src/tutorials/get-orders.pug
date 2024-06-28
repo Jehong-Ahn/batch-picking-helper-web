@@ -1,0 +1,50 @@
+extends /tutorials.pug
+
+block content
+
+  +tutorialHeader(2, "Get Orders")
+
+  .container.py-4: .row
+    .col-5
+      p.fs-4.text-success 1. Paste Orders
+      p Demo order data is available in the 
+        +sheet("Orders")
+        |  sheet. 
+      p For actual use, copy and paste the order list downloaded from your store into this sheet.
+    .col
+      +img('orders1.png')
+        
+  .container.py-4: .row
+    .col
+      p.fs-4.text-success 2. Map Order Columns
+      p Click the 
+        +button("Review Orders")
+        |  button in the sidebar to check the data. 
+      p An error occurred! The standard column name is 
+        +col("Product")
+        | , but your sheet uses 
+        +col("Item Title")
+        | . 
+      p You can either change the column name in the 
+        +sheet("Orders") 
+        |  sheet or set your custom column name in the 
+        +sheet("Ord Col Map") 
+        |  sheet for convenience.
+    .col
+      +img('orders2.png')
+      +img('orders3.png')
+      
+  .container.py-4: .row
+    .col
+      p.fs-4.text-success 3. Review Orders
+      p After resolving the column name issue, click the 
+        +button("Review Orders") 
+        |  button in the sidebar again. 
+      p Success this time!
+    .col
+      +img('orders4.png')
+      
+  spacer
+      
+  +next("/tutorials/link-orders/")
+
